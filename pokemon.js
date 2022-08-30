@@ -1,10 +1,11 @@
-var x=   localStorage.getItem("highscore");
-highscore.text(x);
+//
+//highscore.text(x);
 
-var pokemenu=$("#pokemonmenu"); 
-var pokegame=$("#pokegame"); 
-//$(window).on('load',  fetchPokemon());
-
+function startscreen(){
+    var pokegame=$("#pokegame"); pokegame.css("display","none"); 
+var pokemenu=$("#pokemonmenu"); pokemenu.css("display","block"); pokemenu.fadeIn(500);
+}
+$(window).on('load',  startscreen());
 
 document.addEventListener("keypress", (event) => {
   var name = event.key;
@@ -24,8 +25,8 @@ document.addEventListener("keypress", (event) => {
 var pokeidarr = generateRandomArray(1, 898); //create array of random numbers between 1 and current nr of registered pokemon //console.log("Id array generated: "+pokeidarr,"Length"+ pokeidarr.length);
 var images=[]; var names=[]; var values=[];
 var index=0; //index 
-var modetext=$(".lifebox").text().split(" ");
-var mode=modetext[2];//dictates the data loaded based on game mode switch()  //console.log(mode);
+//var modetext=$(".lifebox").text().split(" ");
+//var mode=modetext[2]; //console.log(mode);
 
 function generateRandomArray(min, max) {
     var arr = [];
@@ -102,6 +103,8 @@ const fetchPokemon = async () => {//console.log(pokeidarr);
   name2 = names[index]; //initial values//console.log(name1);     console.log(name2);
   image1 =images[index-1];
   image2 = images[index]; //initial values//console.log(image1);     console.log(image2);
+var x ='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>';
+  $(".lifebox").html("Mode: "+mode +x);
  }
  
   function setNameImage(){ // sets the names and images for the pokemon
@@ -215,9 +218,10 @@ const fetchPokemon = async () => {//console.log(pokeidarr);
    endmenu.fadeIn(1800);
   endmenu.css("display","block"); 
 
-  if(scnumber>highscnumber){
+  if(Number(scnumber)>=Number(highscnumber)){
     highscnumber=scnumber;
     highscore.text(highscnumber);
+    localStorage.setItem("highscore", highscnumber);
 }
   }else{ cmenu.fadeOut( 300 ).delay( 1000 ).fadeIn( 400 );
    n++;
@@ -226,12 +230,19 @@ const fetchPokemon = async () => {//console.log(pokeidarr);
  }
 
 
-function replay(){
-  console.log(highscnumber);
+function replay(){//console.log(highscnumber);
   localStorage.setItem("highscore", highscnumber);
-  $(document).ready(function () {
-    location.reload(true);
-});
-
+  $(document).ready(function () {location.reload(true);});
  }
  
+ //functions for individual version of the site
+ function startgame(){
+    var x=   localStorage.getItem("highscore");
+    var pokemenu=$("#pokemonmenu");pokemenu.fadeOut(500);
+    var pokegame=$("#pokegame");  pokegame.fadeIn(500);
+    fetchPokemon();
+ }
+var mode="bst"; //default
+ function setMode(newmode){
+    mode=newmode;
+ }
