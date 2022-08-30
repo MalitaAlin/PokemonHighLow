@@ -479,6 +479,10 @@ padding-right:-1%;
   padding:20px;
 }
 
+#endmenu .menutitle{
+    width:95%;
+}
+
 
 #endmenu .menutitle p {
   line-height:1;

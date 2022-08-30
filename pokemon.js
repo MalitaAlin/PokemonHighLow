@@ -1,5 +1,3 @@
-//
-//highscore.text(x);
 
 function startscreen(){
     var pokegame=$("#pokegame"); pokegame.css("display","none"); 
@@ -218,7 +216,7 @@ var x ='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="li
    endmenu.fadeIn(1800);
   endmenu.css("display","block"); 
 
-  if(Number(scnumber)>=Number(highscnumber)){
+  if(Number(scnumber) > Number(highscnumber)){
     highscnumber=scnumber;
     highscore.text(highscnumber);
     localStorage.setItem("highscore", highscnumber);
@@ -231,17 +229,19 @@ var x ='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="li
 
 
 function replay(){//console.log(highscnumber);
-  localStorage.setItem("highscore", highscnumber);
   $(document).ready(function () {location.reload(true);});
  }
  
  //functions for individual version of the site
  function startgame(){
     var x=   localStorage.getItem("highscore");
+    highscore.text(x);
+    console.log(highscnumber);
     var pokemenu=$("#pokemonmenu");pokemenu.fadeOut(500);
     var pokegame=$("#pokegame");  pokegame.fadeIn(500);
     fetchPokemon();
  }
+
 var mode="bst"; //default
  function setMode(newmode){
     mode=newmode;
