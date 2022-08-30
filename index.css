@@ -1,0 +1,464 @@
+body {
+    /*Background credit :-->
+    */font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    padding:0%; margin:0%;
+      }
+
+   .fade-in { animation: fadeIn 1.5s; } /*fadeIn is the animation name*/
+
+      @keyframes fadeIn {
+        0% { opacity: 0.2; }
+        100% { opacity: 1; }
+      }
+
+      
+#menucontainer {
+
+ background-image:url("Country/countrybackground.jpg");
+ background-position: center;
+ background-size:contain;
+ opacity:.5;
+ font-size: 105%;
+
+ width:100%; height:100%;
+   overflow:hidden;
+ min-height:110vh;
+  position:absolute;
+  justify-content: center;
+   color:rgb(4, 4, 3);
+} 
+
+
+.displayframe{
+  top:0%;
+  left:0%;
+  width:110%;
+  height:70%;
+border:none;
+margin:0%;
+padding:0%;
+position:absolute;
+overflow:hidden;
+scroll-margin:"no";
+}
+
+
+
+    
+
+footer {
+  background-color: rgb(75, 91, 91);
+  opacity:.8;
+  position:absolute;
+  bottom: 0;
+  top:94%;
+  left:1%;
+  /* Height of the footer*/ 
+  height: auto;
+  width:100%;
+  border-radius: 10px;
+  padding:0% 0% 0% 1%;
+  color:rgb(255, 255, 254);
+  text-align:left;
+}
+
+
+
+.menu{
+  top:60px;
+  left:27%;
+  position:absolute;
+  width:500px; 
+  height:60%;
+
+  background: rgb(126, 112, 112,0.8);
+  color:rgb(255, 251, 251);
+  font-style:bold;
+  font-size:30px;
+  margin:  auto;
+   padding: 10px 50px 30px 50px;
+   border-radius:20px;
+}
+
+@media (max-width:700px){
+  .menu{
+    left:18%;
+    width:20%;
+    min-width:350px;
+    height:50%;
+    min-height:500px;
+    font-size:1.7rem;
+  }
+
+}
+
+@media (min-width:700px) {
+  .menu{
+    width:30%; 
+    min-width:380px;
+    height:55%;
+    min-height:500px;
+    left:29%;
+  }
+
+
+}
+
+.menu p{
+  margin:4px;
+}
+
+.menutitle{
+  background: rgb(56, 49, 49,0.9);
+  border-radius:20px;
+  text-align: center;
+  width:100%;
+  padding:2px;
+  margin: 0px 2px;
+  line-height:1.3;
+}
+
+.menumode{
+  background: rgba(29, 28, 28, 0.9);
+  height:20%;
+  font-size:120%;
+  border-radius:20px;
+  margin-top:-15px;
+}
+
+.modeimg{
+  z-index:2;
+  width:35px;
+   height:35px;
+   opacity:1;
+}
+
+button:hover{
+  box-shadow:40px rgb(50, 49, 49);
+  color:rgb(229, 226, 226);
+  background:black;
+  transition:0.1s;
+}
+
+ #btn{
+  position: absolute;
+  top:6%;
+  left:7%;
+  width: 30%;
+ 
+  padding:  -5%;
+  background: linear-gradient(to right,rgba(255, 255, 255, 0.507), rgb(235, 255, 236));
+  opacity:0.3;
+  border-radius: 30px;
+  transition: .5s;
+  z-index: 2;
+} 
+
+.modeform{
+  margin: 0;
+  width:130%;
+  height:40%;
+  border:none;
+}
+
+
+.modeselect{
+  font-size:100% ;
+  border:none;
+  outline:none;
+
+  width:85%;
+  height:100%;
+
+background:transparent;
+overflow:hidden;
+  margin:0%;
+  padding:0%;
+}
+
+.modebutton{
+  color:rgb(30, 29, 29);
+  background: rgb(241, 237, 237);
+   border:none;
+   width:90%;
+   font-size:90%;
+  justify-content: center;
+  text-align: center;
+  margin:10px;
+  border-radius:20px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.modebutton:hover {
+  opacity: 1;
+  box-shadow:40px rgb(50, 49, 49);
+  color:white;
+  background:black;
+  transition:0.1s;
+}
+
+.modebutton:focus {
+  box-shadow:40px rgb(50, 49, 49);
+  background:rgb(79, 73, 73);
+  transition:0.1s;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+
+.playbutton{
+
+  background: rgba(18, 239, 103, 0.8);
+  width:120px;
+  height:50px;
+  font-size:1.5rem ;
+  border-radius:20px;
+  
+}
+
+.playbutton:hover {
+  opacity: 1;
+  box-shadow:40px rgb(191, 191, 191);
+  color:white;
+  background:rgb(255, 75, 75);
+  transition:0.1s;
+}
+
+.playbutton:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+#aboutmebtn{
+  color:rgb(30, 29, 29);
+  background: rgb(241, 237, 237);
+   border:none;
+   width:8%;
+   height:80%;
+   top:10%;
+   left:25%;
+   font-size: 100%;
+   position:absolute;
+   display:inline;
+   border-radius: 20px;
+}
+
+#aboutmebtn:hover{
+  color:rgb(246, 245, 245);
+  background: rgb(36, 35, 35);
+}
+
+#aboutmebtn:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+#creditbtn{
+  color:rgb(30, 29, 29);
+  background: rgb(241, 237, 237);
+   border:none;
+   width:8%;
+   height:80%;
+   top:10%;
+   left:40%;
+   font-size: 100%;
+   position:absolute;
+   display:inline;
+   border-radius: 20px;
+}
+
+#creditbtn:hover{
+  color:rgb(246, 245, 245);
+  background: rgb(36, 35, 35);
+}
+
+
+/*PokePage style */
+
+.gamerow{
+margin:50px;
+padding:20px 8% 0 8%;
+}
+
+.pokemondisplay{
+  top:70px;
+  background:rgb(225, 217, 217,0.9);
+border-radius: 20px;
+
+margin:30px 10px;
+padding:5px;
+width:95%;
+height:95%;
+opacity:1;
+position:relative;
+}
+
+.imagelabel{
+  text-align:center;
+  justify-content: center;
+  background: rgba(244, 244, 244, 0.768);
+  color: black;
+
+width:auto;
+  margin:0 40px;
+  font-size:1.8rem;
+  position:relative;
+border-radius:10px;
+}
+
+.pokecontainer{
+  background:url("Pokemon/pokebackground.jpg");
+  background-position: center;
+  background-size:contain;
+  opacity:.9;
+  font-size: 105%;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  min-height:110vh;
+   position:absolute;
+   justify-content: center;
+  top:0%;
+  left:0%;
+}
+
+.comparemenu{
+  top:20%;
+  position:absolute;
+  width:26%;
+  height:auto;
+
+  background: rgba(107, 105, 105, 0.85);
+  color:rgb(255, 255, 255);
+ 
+  font-size:1.6rem;
+  line-height: 1.3;
+
+  padding:0%;
+margin:0%;
+    overflow:hidden;
+    border-radius:50px;
+    text-align:center;
+    word-wrap: break-word;
+}
+
+.comparemenu hr{
+  display: block;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 5px;
+}
+
+.comparemenu .pokename{
+  font-weight: bold;
+  font-family:Verdana , sans-serif;
+background:#a7a6a69c;
+margin:0 70px;
+border-radius:10px;
+}
+
+.highlowbtn{
+  position:center;
+  padding:0; margin:0;
+  width:35%;
+  height:80%;
+  font-size:90% ;
+  border-radius:20px;
+  left:-5%;
+}
+
+.comparemenu span{
+  margin:0%; padding:0%;
+  font-size:0.9rem;
+}
+
+
+.scorebox{
+  top:10px;
+  right:10px;
+
+  font-weight: 120%;
+  font-size: 1.5rem;
+  background:rgba(37, 35, 35, 0.9);
+  color:#f1f1f1;
+  padding:1%;
+position:absolute;
+border-radius:20px;
+}
+
+.resultsymbol{
+  position:relative;
+  
+  width:100%;
+  font-size:15rem;
+  background: rgb(254, 233, 233);
+  padding:0%;
+  margin:10% 0;
+    overflow:hidden;
+    border-radius:50px;
+    text-align:center;
+    display:none;
+}
+
+
+.lifebox{
+  top:10px;
+  left:10px;
+  position:absolute;
+
+  font-weight: 120%;
+  font-size: 1.5rem;
+  text-align:center;
+  justify-content: center;
+  background:rgba(37, 35, 35, 0.9);
+  color:#f1f1f1;
+  margin:0%;
+  padding:4px 20px;
+border-radius:20px;
+}
+
+.heartimg{
+  vertical-align: middle;
+  position:center;
+  width:30px;
+   height:80%;
+   opacity:1;
+   padding:0%;
+   margin:0%;
+   left:0%;
+padding-right:-1%;
+}
+
+#endmenu{
+  display:none;
+  font-size:1.5rem; 
+  padding:20px;
+}
+
+
+#endmenu .menutitle p {
+  line-height:1;
+  padding:0px;
+  font-size:1.4rem; 
+}
+
+.returnbtn{
+  background: rgba(68, 168, 255, 0.8);
+  width:250px;
+  font-size:1.6rem;
+  border-radius:20px;
+  margin:10px;
+}
+
+.returnbtn:hover {
+  opacity: 1;
+  box-shadow:40px rgb(191, 191, 191);
+  color:white;
+  background:black;
+  transition:0.1s;
+}

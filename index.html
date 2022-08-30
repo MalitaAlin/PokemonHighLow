@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokemon-HigherLower</title>
+  <link rel="icon"  href="images/pokeicon.ico">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/eaddf9665d.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="fade-in">
+<div id="pokemonmenu" class="menu" >
+<div class="menutitle" ><h2> <p style="color:rgb(111, 255, 0); display: inline; ">Higher</p> or 
+  <p style="color:rgb(254, 43, 43); display: inline; ">Lower</p></h2>
+ <div class="menumode"><img src="images/pokemonup.png" alt="pokemon" width="40" height="40" right="5">Pokemon Mode
+  <img src="images/pokemondown.png" alt="pokemon" width="40" height="40" ></div> 
+</div> 
+<form class="modeform" action="/pokegame" method="post"> 
+<p > Select:</p>
+<select name="gamemode" class="modeselect" required multiple>
+<option class="modebutton" value="bst">Base Stat Total</option>
+<option class="modebutton" value="pokedex">Pokedex Number</option>
+<option class="modebutton" value="height">Height</option>
+<option class="modebutton" value="weight">Weight</option>
+</select>
+         <button class="playbutton" type="submit" value="submit" onclick="">Play <img class="modeimg" src="Country/countryplay.png"></button> 
+ </div>
+
+
+ <div class="pokegame">
+
+    <row><div class="lifebox"> Mode: <br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>
+    </div>
+    <div class="scorebox">Score: <var id="score">0</var><br> Highscore: <var id="highscore">0</var>
+    </div>
+  </row>
+
+<div class="row gamerow">
+  <div class="column col-lg-4 col-md-4 col-sm-10">
+<img class="pokemondisplay" src=" ">
+<div class="imagelabel" > <div class="pokename"></div>
+<div class="pokestat"></div>
+</div>
+</div>
+
+
+<div class="column  col-lg-4 col-md-3 col-sm-4">
+  <div id="gamemenu" class="comparemenu " >    <!--- message depending on game mode -->  
+       <p> <div class="pokename"></div>   has a <div>
+           <button class="highlowbtn" onclick="higherfunc()"  style=" background: rgba(18, 239, 103, 0.8);">
+            Higher</button> <br> <span>(or Press - <i class="fa-solid fa-h"></i> - )</span>
+          <hr><h4>Or</h4><hr>
+          <button class="highlowbtn" onclick="lowerfunc()"  style=" background: rgba(239, 99, 18, 0.8);">
+            Lower</button> <br><span>(or Press - <i class="fa-solid fa-l"></i> - )</span> 
+             <div class="pokecomparestat"></div> than 
+             <div > <div class="pokename"></div>  </div>
+                </div> 
+      </p>
+    </div> 
+    <div id="rightsymbol" class="comparemenu resultsymbol"> <i class="fa-solid fa-circle-check" style="color:rgb(18, 239, 103); "></i></div>
+    <div id="wrongsymbol" class="comparemenu resultsymbol"><i class="fa-solid fa-circle-xmark" style="color:rgb(249, 14, 14); "></i></div>  
+    
+    <div id="endmenu" class="comparemenu" >
+      <div class="menutitle"> <h4><p style="color:rgb(111, 255, 0); ">Higher</p> <p>or</p>
+        <p style="color:rgb(254, 43, 43);  ">Lower</p></h4> </div> 
+   <!--- message depending on result-->  
+   <p > Congratulations, you've reached the Score: <var id="endscore">0</var>!</p>
+    <button class="returnbtn" type="submit" onclick="replay()"> Replay </button>
+    </div> 
+    
+  </div>
+
+
+<div class="column col-lg-4 col-md-4 col-sm-10">
+  <img class="pokemondisplay" src=" "> 
+  <div class="imagelabel" > <div class="pokename"></div>
+   <div id="hiddenaswer" class="pokestat"></div>
+   </div>
+ </div>
+  </div>
+ 
+ 
+</div>
+
+        <footer>
+          <p>Created by Malita Alin   &#169 2022</p>
+          <button id="aboutmebtn" onclick="location.href='https://carpathianlion.carrd.co/#';"
+          value="Creator Carrd" target="_blank">About Me</button>
+        <!----><form method="POST" action="/addmons"> <button id="creditbtn" type="submit" 
+          value="submit" >Credits</button></form>
+        </footer>
+           
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="pokemon.js" charset="utf-8">
+        </script>
+</body>
+</html>
