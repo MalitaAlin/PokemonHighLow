@@ -101,8 +101,9 @@ const fetchPokemon = async () => {//console.log(pokeidarr);
   name2 = names[index]; //initial values//console.log(name1);     console.log(name2);
   image1 =images[index-1];
   image2 = images[index]; //initial values//console.log(image1);     console.log(image2);
-var x ='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>';
-  $(".lifebox").html("Mode: "+mode +x);
+var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>';
+  $(".lifebox").html("Mode: "+mode +y);
+
  }
  
   function setNameImage(){ // sets the names and images for the pokemon
@@ -234,8 +235,8 @@ function replay(){//console.log(highscnumber);
  
  //functions for individual version of the site
  function startgame(){
-    var x=   localStorage.getItem("highscore");
-    highscore.text(x);
+     highscnumber=   localStorage.getItem("highscore");
+    highscore.text(highscnumber);
     console.log(highscnumber);
     var pokemenu=$("#pokemonmenu");pokemenu.fadeOut(500);
     var pokegame=$("#pokegame");  pokegame.fadeIn(500);
