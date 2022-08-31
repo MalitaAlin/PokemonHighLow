@@ -28,7 +28,7 @@ var index=0; //index
 
 function generateRandomArray(min, max) {
     var arr = [];
-while(arr.length < 200 ){ //200 random numbers
+while(arr.length < 800 ){ //800 random numbers
     var r = Math.floor(Math.random() * max) + min;
     if(arr.indexOf(r) == -1) arr.push(r);}
 return arr;
@@ -211,18 +211,34 @@ var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lif
  lifenumber--; lives.delay( 500 ).text( lifenumber);  //lower the life count
  lives.delay( 500 ).fadeIn( 400 );
  
-  if(lifenumber==0){
+ if(lifenumber==0){
    $("#endscore").text(scnumber);
   cmenu.css("display","none"); 
    endmenu.fadeIn(1800);
   endmenu.css("display","block"); 
 
+  if(Number(scnumber)<10){
+  $("#endmessage").text("Magikarp ");}
+  else if(Number(scnumber)<25){
+    $("#endmessage").text("Unown ");
+  } else if(Number(scnumber)<51){
+    $("#endmessage").text("Slowbro ");
+  } else if(Number(scnumber)<76){
+    $("#endmessage").text("Orbeetle ");
+  } else if(Number(scnumber)<101){
+    $("#endmessage").text("Metagross ");
+  } else if(Number(scnumber)<201){
+    $("#endmessage").text("Tort ");
+  }  //adds a message based on the player's performance
+
   if(Number(scnumber) > Number(highscnumber)){
     highscnumber=scnumber;
     highscore.text(highscnumber);
     localStorage.setItem("highscore", highscnumber);
-}
-  }else{ cmenu.fadeOut( 300 ).delay( 1000 ).fadeIn( 400 );
+  }
+}else{
+     cmenu.fadeOut( 300 ).delay( 1000 ).fadeIn( 400 );
+
    n++;
    setTimeout(function() { fetchPokemon(); }, 1200);
   }

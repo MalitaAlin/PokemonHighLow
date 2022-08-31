@@ -63,27 +63,8 @@ footer {
    border-radius:20px;
 }
 
-@media (max-width:700px){
-  .menu{
-    left:18%;
-    width:20%;
-    min-width:350px;
-    height:50%;
-    min-height:500px;
-    font-size:1.7rem;
-  }
 
-}
 
-@media (min-width:700px) {
-  .menu{
-    width:38%; 
-    min-width:380px;
-    height:68%;
-    min-height:500px;
-    left:29%;
-  }
-}
 
 .menu p{
   margin:20px 4px 4px 4px;
@@ -93,7 +74,7 @@ footer {
   background: rgb(56, 49, 49,0.9);
   border-radius:20px;
   text-align: center;
-  width:105%;
+  width:100%;
   padding:2px;
   margin: 0px 2px;
   line-height:1.5;
@@ -405,6 +386,8 @@ border-radius:10px;
   position:center;
   padding:0; margin:0;
   width:35%;
+  min-width:50px;
+  min-height:30px;
   height:80%;
   font-size:90% ;
   border-radius:20px;
@@ -487,7 +470,7 @@ padding-right:-1%;
 #endmenu .menutitle p {
   line-height:1;
   padding:0px;
-  font-size:1.4rem; 
+  font-size:1.3rem; 
 }
 
 .returnbtn{
@@ -504,4 +487,284 @@ padding-right:-1%;
   color:white;
   background:black;
   transition:0.1s;
+}
+
+
+/* Sreen responsive features */
+@media (min-width:1100px){
+  .menu{
+    left:25%;
+    width:46%;
+    min-width:600px;
+    height:50%;
+    min-height:500px;
+    font-size:1.7rem;
+  }
+
+}
+
+@media (min-width:760px) and (max-width:1100px){
+  .menu{
+    width:45%; 
+    min-width:540px;
+    height:68%;
+    min-height:500px;
+    left:22%;
+    right:28%;
+  }
+
+  .gamerow{
+    margin:2%;
+padding:70px 0 0 3%;
+  }
+
+  .scorebox{
+    top:10px;
+    right:10%;
+    width:150px;
+    font-size: 0.9rem;
+    padding:3%;
+    margin-left:10%;
+  position:absolute;
+  }
+
+  .pokemondisplay{
+    top:60px;
+  
+  margin:20px 5px;
+  padding:5px;
+  width:88%;
+  height:88%;
+  }
+  
+  .comparemenu{
+    top:25%;
+    position:absolute;
+    width:30%;
+    height:auto;
+   
+    font-size:1.1rem;
+    padding:0%;
+  margin:0% 3% 0 0;
+      overflow:hidden;
+  }
+
+  .resultsymbol{
+    font-size:15rem;
+  }
+
+  #aboutmebtn{
+    width:10%;
+    min-width:90px;
+    height:80%;
+    top:10%;
+    left:30%;
+  }
+
+  #creditbtn.dropup{
+    width:10%;
+    min-width:90px;
+    top:10%;
+    left:60%;
+  }
+
+}
+
+@media (min-width:500px) and (max-width:760px){
+  .menu{
+    width:38%; 
+    min-width:400px;
+    height:68%;
+    min-height:500px;
+    font-size:1.2rem;
+    left:13%;
+    right:28%;
+    padding:0 5%;
+  }
+
+  body{
+overflow-y:scroll;
+  }
+
+  .scorebox{
+    top:10px;
+    right:10%;
+    width:150px;
+    font-size: 0.9rem;
+    padding:3%;
+    margin-left:10%;
+  position:absolute;
+  }
+
+  .lifebox{
+    top:10px;
+    left:10px;
+    font-size: 0.9rem;
+    margin:0%;
+    padding:4px 20px;
+  }
+
+  .gamerow{
+    margin:10% 5%;
+padding:60px 0 0 3%;
+  }
+
+  .column{
+    margin:-8% 0 2% 0;
+    padding:-8% 0% 0%0%;
+    height:90%;
+  }
+
+  .pokemondisplay{  
+  margin:10px 22%;
+  padding:-10% 5px 5px 5px;
+  width:55%;
+  height:55%;
+  }
+
+  .imagelabel{
+  width:50%;
+    margin:0 23%;
+    font-size:1.1rem;
+    position:relative;
+  border-radius:10px;
+  }
+  
+  .comparemenu{
+position:relative;
+ width:30%;
+    height:auto;
+   top:1%;
+    font-size:1.1rem;
+    line-height: 1.1;
+    padding:0% ;
+    margin:1% 20% -5% 20%;
+      overflow:hidden;
+  }
+
+  .resultsymbol{
+    font-size:15rem;
+  }
+
+  footer{
+    position: fixed;
+   bottom: 0;
+  }
+
+  #aboutmebtn{
+    width:10%;
+    min-width:90px;
+    height:80%;
+    top:10%;
+    left:45%;
+  }
+
+  #creditbtn.dropup{
+    width:10%;
+    min-width:90px;
+    top:10%;
+    left:65%;
+  }
+}
+
+@media (max-width:500px){
+  .menu{
+    width:90%; 
+    min-width:400px;
+ left:5%;
+ right:8%;
+    height:68%;
+    min-height:500px;
+    padding:0 3%;
+  }
+
+  body{
+    overflow-y:scroll;
+    width:150%;
+      }
+    
+      .gamerow{
+        margin:10% 5%;
+    padding:10px 0 0 3%;
+      }
+    
+      .column{
+        margin:-16% 0 2% 0;
+        padding:-16% 0% 0% 0%;
+        height:60%;
+      }
+    
+      .pokemondisplay{  
+      margin:10px 16%;
+      padding:-10% 5px 5px 5px;
+      width:40%;
+      height:40%;
+      }
+    
+      .imagelabel{
+      width:38%;
+        margin:0 16%;
+        font-size:1.1rem;
+        position:relative;
+      border-radius:10px;
+      }
+      
+      .comparemenu{
+    position:relative;
+    width:50%;
+        height:auto;
+       top:1%;
+        font-size:0.9rem;
+        line-height: 1.1;
+        padding:0% ;
+        margin:1% 10% -5% 10%;
+          overflow:hidden;
+      }
+
+      .scorebox{
+        top:10px;
+        right:0;
+        width:150px;
+        font-size: 0.9rem;
+        padding:3%;
+        margin-left:80%;
+      position:absolute;
+      }
+
+      .lifebox{
+        top:10px;
+        left:10px;
+        font-size: 0.9rem;
+        margin:0%;
+        padding:4px 20px;
+      }
+
+      .resultsymbol{
+        font-size:15rem;
+      }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    left:0%;
+    height: auto;
+    width:480px;
+    font-size:0.9rem;
+    padding:0% 0% 0% 1%;
+  }
+
+  #aboutmebtn{
+    width:10%;
+    min-width:90px;
+    height:80%;
+    top:10%;
+    left:45%;
+  }
+
+  #creditbtn.dropup{
+    width:10%;
+    min-width:90px;
+    top:10%;
+    left:70%;
+  }
 }
