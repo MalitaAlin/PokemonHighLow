@@ -252,15 +252,13 @@ function replay(){//console.log(highscnumber);
  
  //functions for individual version of the site
  function startgame(){
-     highscnumber=   localStorage.getItem("highscore");
-    highscore.text(highscnumber);
-    console.log(highscnumber);
+  mode=String($( ".modeselect" ).val());//  console.log(mode);
+     highscnumber=  localStorage.getItem("highscore");
+    highscore.text(highscnumber);//console.log(highscnumber);
     var pokemenu=$("#pokemonmenu");pokemenu.fadeOut(500);
-    var pokegame=$("#pokegame");  pokegame.fadeIn(500);
+    var pokegame=$("#pokegame");  pokegame.fadeIn(500);// console.log($( ".modeselect" ).val());
     fetchPokemon();
  }
 
 var mode="bst"; //default
- function setMode(newmode){
-    mode=newmode;
- }
+//function setMode(newmode){mode=newmode;} function that used to replace select
