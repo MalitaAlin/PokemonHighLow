@@ -101,7 +101,7 @@ const fetchPokemon = async () => {//console.log(pokeidarr);
   name2 = names[index]; //initial values//console.log(name1);     console.log(name2);
   image1 =images[index-1];
   image2 = images[index]; //initial values//console.log(image1);     console.log(image2);
-var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>';
+var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">'+lifenumber+'</var>';
   $(".lifebox").html("Mode: "+mode +y);
 
  }
@@ -198,7 +198,7 @@ var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lif
  scnumber++;  
   if(scnumber==10||scnumber==25||scnumber==50||scnumber==100)
   {lifenumber++; lives.text(lifenumber);} //life gain threshold
- score.text(scnumber-1+" +1").delay(500).text(scnumber);
+ score.text(scnumber);
  n++;
  setTimeout(function() { fetchPokemon(); }, 1200);
  //makes check sign appear, call connect.js function, score++
@@ -208,15 +208,16 @@ var y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lif
  
  ws.fadeIn( 300 ).delay( 1000 ).fadeOut( 400 );  //make wrong sign apear, put endmenu
  lives.fadeOut( 300 );
- lifenumber--; lives.delay( 500 ).text( lifenumber);  //lower the life count
- lives.delay( 500 ).fadeIn( 400 );
+ lifenumber--;//lower the life count7
+ y='<br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">'+lifenumber+'</var>';
+  $(".lifebox").html("Mode: "+mode +y).fadeIn( 400 );
  
  if(lifenumber==0){
    $("#endscore").text(scnumber);
   cmenu.css("display","none"); 
    endmenu.fadeIn(1800);
   endmenu.css("display","block"); 
-
+ 
   if(Number(scnumber)<10){
   $("#endmessage").text("Magikarp ");}
   else if(Number(scnumber)<25){
