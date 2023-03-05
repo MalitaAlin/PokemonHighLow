@@ -20,7 +20,7 @@ document.addEventListener("keypress", (event) => {
 }, false); // function that adds a keypress Event Listener and calls rollDice() function if 'r' or 'R' is pressed
 
 
-var pokeidarr = generateRandomArray(1, 898); //create array of random numbers between 1 and current nr of registered pokemon //console.log("Id array generated: "+pokeidarr,"Length"+ pokeidarr.length);
+var pokeidarr = generateRandomArray(1, 1000); //create array of random numbers between 1 and current nr of registered pokemon //console.log("Id array generated: "+pokeidarr,"Length"+ pokeidarr.length);
 var images=[]; var names=[]; var values=[];
 var index=0; //index 
 //var modetext=$(".lifebox").text().split(" ");
