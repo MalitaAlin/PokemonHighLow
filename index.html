@@ -6,9 +6,8 @@
   <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/eaddf9665d.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  
+ 
   <script src="https://kit.fontawesome.com/eaddf9665d.js" crossorigin="anonymous"></script>
       <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
@@ -18,88 +17,135 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body class="fade-in">
+<body class="fade-in d-flex flex-column min-vh-100">
 
-<div id="pokemonmenu" class="menu" >
-<div class="menutitle" ><h2> <p style="color:rgb(111, 255, 0); display: inline; ">Higher</p> or 
-  <p style="color:rgb(254, 43, 43); display: inline; ">Lower</p></h2>
- <div class="menumode"><img src="images/pokemonup.png" alt="pokemon" width="40" height="40" right="5">Pokemon Mode
+  <section >
+<div id="pokemonmenu" class="mt-5 w-50 container-fluid " >
+  <div class=" menu translate-center  fs-3  rounded-5 d w-100 p-3">
+<div class="menutitle justify-content-center rounded-5  p-0 m-0" >
+  <h1> <p  style="color:rgb(111, 255, 0); display:inline ">Higher</p>
+    <p style=" display:inline">&nbsp;or&nbsp;</p>  
+  <p style="color:rgb(254, 43, 43); display:inline">Lower</p></h1>
+
+ <div class="menumode rounded-top rounded-5"><img src="images/pokemonup.png" alt="pokemon" width="40" height="40" right="5">Pokemon Challenge
   <img src="images/pokemondown.png" alt="pokemon" width="40" height="40" ></div> 
 </div> 
-<p > Select:</p>
-<select name="gamemode" class="modeselect" required multiple>
-<option class="modebutton" value="bst" >Base Stat Total</option>
-<option class="modebutton" value="pokedex" >Pokedex Number</option>
-<option class="modebutton" value="height" >Height</option>
-<option class="modebutton" value="weight" >Weight</option>
+<div class="fs-6"> <p class="m-0 mt-2 p-0 fs-4"><i class="fa-solid fa-caret-right"></i> How to play: </p>
+  <ul >
+    <li >Pick a game mode below and then press play!</li>
+    <li>Try to get the high score! You may sometimes even gain extra lives!</li>
+  </ul>
+</div>
+<p class="m-2 fs-4"> <i class="fa-solid fa-caret-right"></i> Select Game Mode:</p>
+<select class="justify-content-center  modeselect form-select fs-4 form-select-lg m-3 w-75 overflow-auto mh-200"  aria-label=".form-select-lg " required>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="BST" selected >Base Stat Total</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Pokedex" >Pokedex Number</option>
+  <option class="modebutton btn fs-5  justify-content-centar p-2 border border-dark rounded" value="Height" >Height</option>
+  <option class="modebutton btn fs-5  justify-content-centar  p-2 border border-dark rounded" value="Weight" >Weight</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="HP"  >Health</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Ph.Attack" >Physical Attack</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Ph.Defense"  >Physical Defense</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Sp.Attack"  >Special Attack</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Sp.Defense"  >Special Defense</option>
+  <option class="modebutton btn fs-5 justify-content-centar p-2 border border-dark rounded" value="Speed"  >Speed</option>
 </select>
-         <button class="playbutton"  onclick="startgame()">Play <img class="modeimg" src="images/pokeplay.png"></button> 
+         <button type="submit" class="playbutton"  onclick="startGame()">Play <img class="modeimg" src="images/pokeplay.png"></button> 
  </div>
+</div>
+</section>
 
 
- <div id="pokegame">
-    <row><div class="lifebox"> Mode: bst <br> <img class="heartimg" src="images/pokeheartimg.png" > x <var id="lifenr">1</var>
+<section>
+  <div id="pokegame" class="mb-2" >
+    <div class=" flex-container row justify-content-between m-0  p-0 " >
+  
+       <div class=" flex-item w-auto lifebox rounded-4 pt-2 mx-4">Mode: BST 
+        <div> 
+          <img class=" heartimg p-0" src="images/pokeheartimg.png" > x <var id="lifenr">1</var> 
+        </div>  
+      </div>
+        <div class="  flex-item w-auto p-2"> 
+          <button class=" fs-5 flex-item  btn btn-danger " onclick="backToMenu()">Quit</button> 
+        </div>    
+     
+       <div class="  flex-item  w-auto scorebox  p-2 mx-4 rounded-4">
+        <p class="p-0">Score: <var id="score">0</var></p><p  class="p-0"> Highscore: <var id="highscore"></var></p>
+     </div>
     </div>
-    <div class="scorebox">Score: <var id="score">0</var><br> Highscore: <var id="highscore"></var>
-    </div>
-  </row>
+ 
 
-<div class="row gamerow">
-  <div class="column col-lg-4 col-md-4 col-sm-12">
-<img class="pokemondisplay" src=" ">
-<div class="imagelabel" > <div class="pokename"></div>
-<div class="pokestat"></div>
+ <div class="middle-game-box flex-container container align-items-center justify-content-center ">
+ <div class="row justify-content-center">
+
+   <div class="flex-item  column col-lg-4 col-md-4 col-sm-11 pokemoncollumn ">
+ <div class="d-flex align-items-center justify-content-center justify-content-center position-relative">
+  <img class="pokemondisplay p-2 rounded-4 mt-3 mx-2 z-0 " src="">
+ <div class="imagelabel  position-absolute bottom-0 py-1 px-4 rounded-5 z-1 mx-5 text-center" > 
+   <div class="pokename fs-4"></div>
+ <div class="pokestat fs-4"></div>
 </div>
 </div>
+ </div>
+ 
+ <div class="flex-item column  col-lg-4 col-md-4  mt-3 col-sm-11 align-items-center p-3">
+   <div id="gamemenu" class="comparemenu p-2  m-0 rounded-5 fs-5" >    <!--- message depending on game mode -->  
+        <p> <div class="pokename fs-4 rounded-5 p-0 mx-2"></div>  has a <div>
+            <button class="highlowbtn fs-4 rounded-5 py-1 px-3" onclick="higherfunc()"  style=" background: rgba(18, 239, 103, 0.8);">
+             Higher</button> <br> <span>(or Press - <i class="fa-solid fa-h"></i> - )</span>
+           <hr><h4>Or</h4><hr>
+           <button class="highlowbtn fs-4 rounded-5 py-1 px-3" onclick="lowerfunc()"  style=" background: rgba(239, 99, 18, 0.8);">
+             Lower</button> <br><span>(or Press - <i class="fa-solid fa-l"></i> - )</span> 
+              <div class="pokecomparestat"></div> than 
+              <div > <div class="pokename fs-4 rounded-2 p-0 mx-2"></div>  </div>
+            </div> 
+       </p>
+     </div> 
+
+     <div id="rightsymbol" class="comparemenu p-0 w-100 h-100 rounded-5 resultsymbol"> <i class="fa-solid fa-circle-check" style="color:rgb(18, 239, 103); "></i></div>
+     <div id="wrongsymbol" class="comparemenu p-0 w-100 h-100 rounded-5 resultsymbol"><i class="fa-solid fa-circle-xmark" style="color:rgb(249, 14, 14); "></i></div>  
+     
 
 
-<div class="column  col-lg-4 col-md-4 col-sm-12">
-  <div id="gamemenu" class="comparemenu " >    <!--- message depending on game mode -->  
-       <p> <div class="pokename"></div>   has a <div>
-           <button class="highlowbtn" onclick="higherfunc()"  style=" background: rgba(18, 239, 103, 0.8);">
-            Higher</button> <br> <span>(or Press - <i class="fa-solid fa-h"></i> - )</span>
-          <hr><h4>Or</h4><hr>
-          <button class="highlowbtn" onclick="lowerfunc()"  style=" background: rgba(239, 99, 18, 0.8);">
-            Lower</button> <br><span>(or Press - <i class="fa-solid fa-l"></i> - )</span> 
-             <div class="pokecomparestat"></div> than 
-             <div > <div class="pokename"></div>  </div>
-                </div> 
-      </p>
-    </div> 
-    <div id="rightsymbol" class="comparemenu resultsymbol"> <i class="fa-solid fa-circle-check" style="color:rgb(18, 239, 103); "></i></div>
-    <div id="wrongsymbol" class="comparemenu resultsymbol"><i class="fa-solid fa-circle-xmark" style="color:rgb(249, 14, 14); "></i></div>  
-    
-    <div id="endmenu" class="comparemenu" >
-      <div class="menutitle"> <h4><p style="color:rgb(111, 255, 0); ">Higher</p> <p>or</p>
-        <p style="color:rgb(254, 43, 43);  ">Lower</p></h4> </div> 
-   <!--- message depending on result-->  
-   <p > Congratulations, you've reached the Score: <var id="endscore">0</var>!</p>
-   <p><i class="fa-solid fa-trophy"></i><em> PokeNerd Level: <var id="endmessage"></var></em></p>
-    <button class="returnbtn" type="submit" onclick="replay()"> Replay </button>
-    </div> 
-    
-  </div>
-
-
-<div class="column col-lg-4 col-md-4 col-sm-12">
-  <img class="pokemondisplay" src=" "> 
-  <div class="imagelabel" > <div class="pokename"></div>
-   <div id="hiddenaswer" class="pokestat"></div>
+     <div id="endmenu" class="comparemenu w-100 h-100 p-2 rounded-5 p-5 fs-4" >
+       <div class="menutitle rounded-5 p-2"> <h3><p style="color:rgb(111, 255, 0); " class="fs-4">Higher</p> <p>or</p>
+         <p style="color:rgb(254, 43, 43);  "  class="fs-4">Lower</p></h3> </div> 
+    <!--- message depending on result-->  
+    <p > Congratulations, you've reached the Score: <var id="endscore">0</var>!</p>
+    <p><i class="fa-solid fa-trophy"></i><em> PokeNerd Level: <var id="endmessage"></var></em></p>
+     <button class="btn btn-success fs-5 rounded-pill" type="submit" onclick="resetGame()"> Replay </button>
+     <button class="btn btn-danger fs-5 rounded-pill" type="submit" onclick="backToMenu()"> Quit </button>
+     </div> 
+     
    </div>
- </div>
+ 
+ 
+   <div class="flex-item  column col-lg-4 col-md-4 col-sm-11 pokemoncollumn ">
+    <div class="d-flex align-items-center justify-content-center justify-content-center position-relative">
+      <img class="pokemondisplay p-2 rounded-4 mt-3 mx-2 z-0 " src="">
+     <div class="imagelabel  position-absolute bottom-0 py-1 px-4 rounded-5 z-1 mx-5 text-center" > 
+      <div class="m-2">
+            <div class="pokename fs-4"></div>
+    <div id="hiddenanswer" class="pokestat fs-4"></div>
+    </div>
   </div>
- 
- 
-</div>
+   </div>
+    </div>
 
-        <footer>
-          <p>Created by Malita Alin   &#169 2022</p>
-          <button id="aboutmebtn" onclick="location.href='https://carpathianlion.carrd.co/#';"
+   </div>
+  
+     </div>
+   
+  </div>
+ </section>
+        <footer class=" fixed-bottom mt-auto  p-2">
+                   <div class="d-inline  fs-7  my-2 p-0  h-75">
+          <p class="d-inline">Created by Malita Alin &#169 2022</p>
+           <button id="aboutmebtn" class="d-inline rounded-5 px-3 mx-2 " onclick="location.href='https://carpathianlion.carrd.co/#';"
           value="Creator Carrd" target="_blank">About Me</button>
         
-          <div id="creditbtn" class="dropup">
-            <button class="dropbtn">Credits</button>
-            <div class="dropup-content">
+          <div id="creditbtn" class=" d-inline dropup position-absolute  rounded-5 ">
+            <button class="dropbtn w-100 h-100 align-content-center px-3">Credits</button>
+            <div class="dropup-content p-2 border-none rounded">
               This site is for non-comenrcial, educational and enertainment purposes only, I do not own any of the following imges utilised.
               <a href="https://www.flaticon.com/free-icon/up-arrow_188966">Pokeball Up and Down Arrows <img src="images/pokemondown.png" alt="pokemon" ></a>
               <a href="https://www.seekpng.com/ipng/u2r5t4w7o0a9o0w7_pixel-art-poke-ball/">pokeicon<img src="images/pokemonmod.png" alt="pokemon"> </a>
@@ -109,7 +155,7 @@
               <a href="http://pixelartmaker.com/art/3c09512791443db">Luvdisc pixel art:<img src="images/pokeheartimg.png" alt="pokemon"></a>
             </div>
           </div>
-
+        </div>
 
         </footer>
            
